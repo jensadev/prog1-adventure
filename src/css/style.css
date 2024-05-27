@@ -1,0 +1,46 @@
+:root {
+  --sidebar-width: 8rem;
+  --container-max: 52rem;
+  --font-body: sans-serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body {
+  font-size: 1.2rem;  
+}
+
+nav > ul { 
+  list-style: none;
+  padding: 0;
+}
+
+.container {
+  width: min(100% - 3rem, var(--container-max, 60ch));
+  margin-inline: auto;
+}
+
+ .with-sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-direction: row-reverse; */
+  gap: 1rem;
+}
+
+.sidebar {
+  /* ↓ The width when the sidebar _is_ a sidebar */
+  flex-basis: var(--sidebar-width);
+  flex-grow: 1;
+}
+
+.not-sidebar {
+  /* ↓ Grow from nothing */
+  flex-basis: 0;
+  flex-grow: 999;
+  /* ↓ Wrap when the elements are of equal width */
+  min-inline-size: 50%;
+}
